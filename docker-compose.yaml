@@ -1,15 +1,15 @@
 version: '3'
 services:
-  one:
-    build:
-      context: ./file-1
-    image: server-1
-    ports:
-    - "8080:8080"
+	DEV-1:
+		image: 'tomcat:9.0.68-jre8-temurin-jammy'
+		ports:
+		- "8090:8080"
+		volumes:
+		- "/mnt/jenkins-slave1:/usr/local/tomcat/webapps/"
 
-  two:
-    build:
-      context: ./file-2
-    image: server-2
-    ports:
-    - "9090:8080"
+	DEV-2:
+		image: 'tomcat:9.0.68-jre8-temurin-jammy'
+		ports:
+		- "9090:8080"
+		volumes:
+		- "/mnt/jenkins-slave1:/usr/local/tomcat/webapps/"
